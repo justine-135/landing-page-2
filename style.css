@@ -1,0 +1,208 @@
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+.bg {
+	background-image: url(yoga.jpeg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center left;
+}
+
+body {
+	font-family: "Playfair Display", serif;
+}
+
+.navbar {
+	height: 80px;
+	width: 100%;
+}
+
+.navbar ul {
+	display: flex;
+	list-style: none;
+	align-items: center;
+	justify-content: space-around;
+	width: 70%;
+	margin: auto;
+	height: 100%;
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+
+.navbar ul li {
+	cursor: pointer;
+}
+
+.navbar ul li:nth-child(4) {
+	font-family: "Abril Fatface", cursive;
+	font-size: 2.8rem;
+}
+
+main {
+	height: 70vh;
+	width: 70%;
+	display: grid;
+	grid-template-columns: auto, 30%;
+	grid-template-rows: 10%, auto;
+	grid-template-areas:
+		"message "
+		" contact";
+	margin: 50px auto;
+}
+
+.message {
+	grid-area: message;
+	line-height: 50px;
+	position: relative;
+}
+
+.circle {
+	height: 400px;
+	width: 400px;
+	border-radius: 50%;
+	background-color: transparent;
+	border: 2px solid rgba(250, 234, 181, 0.61);
+	position: absolute;
+	right: 0;
+	top: -10%;
+}
+
+.message-div {
+	width: 100%;
+	margin-left: auto;
+	text-align: right;
+}
+
+.message p {
+	font-size: 6.2rem;
+	font-weight: 500;
+	position: relative;
+	z-index: 2;
+}
+
+.message p:nth-child(2) {
+	font-size: 1.8rem;
+	font-weight: 400;
+	color: rgb(20, 20, 20);
+}
+
+.signup {
+	grid-area: contact;
+	margin-left: auto;
+	margin-top: auto;
+}
+
+.signup button {
+	font-size: 2.4rem;
+	background-color: transparent;
+	padding: 0.5rem 1rem;
+	border: 2px solid rgba(250, 234, 181, 0.61);
+	color: rgba(250, 234, 181, 0.61);
+	cursor: pointer;
+	transition: 200ms ease;
+	text-transform: capitalize;
+}
+
+.navbar ul li:last-child {
+	display: none;
+}
+
+.signup button:hover {
+	border: 2px solid rgba(250, 234, 181, 1);
+	color: rgba(250, 234, 181, 1);
+}
+
+.menu-container {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.bg {
+		background-position: center right;
+	}
+	.navbar ul li {
+		display: none;
+	}
+	.navbar ul li:nth-child(4) {
+		display: block;
+		margin-right: auto;
+	}
+	.navbar ul li:last-child {
+		display: block;
+	}
+	.circle {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.main {
+		margin: 190px auto;
+	}
+	.message p {
+		text-align: center;
+		line-height: 60px;
+	}
+	.signup {
+		grid-area: contact;
+		margin: -100px auto 0px auto;
+		position: relative;
+		z-index: 3;
+	}
+	.signup button {
+		border: 2px solid rgb(250, 216, 106);
+		color: rgb(255, 239, 184);
+		background-color: rgba(75, 75, 75, 0.226);
+	}
+	.signup button:hover {
+		border: 2px solid rgb(153, 125, 33);
+		color: rgb(153, 125, 33);
+	}
+	.menu-container {
+		display: none;
+		position: fixed;
+		right: 0%;
+		background-color: rgba(250, 234, 181, 1);
+		width: 174px;
+		padding-left: 2rem;
+		z-index: 5;
+		height: 100%;
+	}
+
+	.menu-container ul li {
+		font-size: 1.8rem;
+		font-weight: 500;
+		list-style: none;
+		padding: 1rem 0rem;
+		cursor: pointer;
+	}
+
+	.menu2 {
+		height: 80px;
+		display: flex;
+		align-items: center;
+		padding: 0rem;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.bg {
+		background-position: right;
+	}
+	.circle {
+		height: 300px;
+		width: 300px;
+	}
+	.message p {
+		font-size: 4.2rem;
+	}
+	.message p:nth-child(2) {
+		font-size: 1.6rem;
+	}
+}
